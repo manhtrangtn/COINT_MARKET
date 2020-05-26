@@ -30,7 +30,7 @@ namespace CointMarket.Services
         Task.Run(async () => {
           for (; ; )
           {
-            await Task.Delay(1000);
+            await Task.Delay(Constant.IntervalTime);
             string coins = await CoinService.GetCryptocompareCoint(Constant.Coins);
             Coin coin = JsonConvert.DeserializeObject<Coin>(coins);
             Client = new FirebaseClient(Config);

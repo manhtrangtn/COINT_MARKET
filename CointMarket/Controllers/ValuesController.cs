@@ -26,7 +26,6 @@ namespace CointMarket.Controllers
         // GET api/values/5
         public async Task<IHttpActionResult> Get(int id)
         {
-          RealtimeCoinService.RealtimeCoin();
           return Ok();
         }
 
