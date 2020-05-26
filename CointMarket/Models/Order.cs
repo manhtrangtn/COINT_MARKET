@@ -17,7 +17,7 @@ namespace CointMarket.Models
         public DateTime DeletedAt { get; set; }
         public OrderStatus Status { get; set; }
         [ForeignKey("User")]
-        public int UserID { get; set; }
+        public int UserId { get; set; }
         public virtual User User { get; set; }
     }
     public enum OrderStatus

@@ -1,14 +1,22 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
+using System.Threading.Tasks;
 using System.Web.Http;
+using System.Web.Http.Cors;
+using CointMarket.Models.Coins;
+using CointMarket.Services;
+using Newtonsoft.Json;
 
 namespace CointMarket.Controllers
 {
+    [EnableCors(origins: "*", headers: "*", methods: "*")]
     public class ValuesController : ApiController
     {
+      private readonly CoinService _coinService = new CoinService();
         // GET api/values
         public IEnumerable<string> Get()
         {
@@ -16,9 +24,10 @@ namespace CointMarket.Controllers
         }
 
         // GET api/values/5
-        public string Get(int id)
+        public async Task<IHttpActionResult> Get(int id)
         {
-            return "value";
+          RealtimeCoinService.RealtimeCoin();
+          return Ok();
         }
 
         // POST api/values
