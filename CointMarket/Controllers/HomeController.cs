@@ -12,7 +12,7 @@ namespace CointMarket.Controllers
         public ActionResult Index()
         {
             ViewBag.Title = "Home Page";
-            RealtimeCoinService.RealtimeCoin();
+            RealtimeDatabaseService.RealtimeCoin();
             return View();
         }
     }
