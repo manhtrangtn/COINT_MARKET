@@ -11,13 +11,13 @@ namespace CointMarket.Models
     {
         [Key]
         public int Id { get; set; }
-        public string Rank { get; set; }
+        public string RankToken { get; set; }
         public string Total { get; set; }
         public DateTime CreatedAt { get; set; }
-        public DateTime? DeletedAt { get; set; }
+        public DateTime DeletedAt { get; set; }
         public OrderStatus Status { get; set; }
         [ForeignKey("User")]
-        public int UserId { get; set; }
+        public string UserId { get; set; }
         public virtual User User { get; set; }
     }
     public enum OrderStatus
