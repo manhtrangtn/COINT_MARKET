@@ -8,5 +8,7 @@ namespace CointMarket.Models
 {
     public class Role:IdentityRole
     {
+        public Role() : base() { }
+        public Role(string name) : base(name) { }
     }
 }

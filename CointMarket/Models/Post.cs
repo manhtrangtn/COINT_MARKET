@@ -19,10 +19,10 @@ namespace CointMarket.Models
         public string Ranks { get; set; }
         public PostStatus Status { get; set; }
         public DateTime CreatedAt { get; set; }
-        public DateTime? UpdatedAt { get; set; }
-        public DateTime? DeletedAt { get; set; }
+        public DateTime UpdatedAt { get; set; }
+        public DateTime DeletedAt { get; set; }
     }
-        public enum PostStatus
+    public enum PostStatus
         {
             ACTIVE = 0,
             DISABLE = 1,
