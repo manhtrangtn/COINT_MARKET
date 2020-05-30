@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.Owin.Security.OAuth;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web.Http;
@@ -11,7 +12,11 @@ namespace CointMarket
         {
             // Web API configuration and services
 
-            config.EnableCors();
+            //config.EnableCors();
+            // Configure Web API to use only bearer token authentication.
+            config.SuppressDefaultHostAuthentication();
+            config.Filters.Add(new HostAuthenticationFilter(OAuthDefaults.AuthenticationType));
+
             // Web API routes
             config.MapHttpAttributeRoutes();
 
